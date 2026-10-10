@@ -1,52 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Kontak - Jamu Sehat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak dan Pemesanan - Rumah Makan Nusantara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
     <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
     <a href="profil.html">Profil</a>
     <a href="about.html">About</a>
-    <a href="galery.html">Galery</a>
+    <a href="gallery.html">Gallery</a>
     <a href="kontak.html">Kontak</a>
 </nav>
 
-<div class="container">
+<main class="container">
+    <h1 class="section-title">Kontak dan Pemesanan</h1>
+    <p class="section-intro">
+        Isi formulir berikut untuk mencoba proses pemesanan
+        di Rumah Makan Nusantara.
+    </p>
 
-    <div class="card">
+    <form id="orderForm" class="order-form">
+        <div class="form-group">
+            <label for="nama">Nama pelanggan</label>
+            <input type="text" id="nama" name="nama"
+                   placeholder="Masukkan nama kamu" required>
+        </div>
 
-        <h2>Kontak Kami</h2>
+        <div class="form-group">
+            <label for="telepon">Nomor telepon</label>
+            <input type="tel" id="telepon" name="telepon"
+                   placeholder="Contoh: 081234567890"
+                   pattern="[0-9+ -]{8,20}" required>
+        </div>
 
-        <p><b>Alamat:</b> Jl.Rapi No. 69, Indonesia</p>
-        <p><b>Telepon:</b> 085717522104</p>
+        <div class="form-group">
+            <label for="menu">Pilih menu</label>
+            <select id="menu" name="menu" required>
+                <option value="">-- Pilih menu --</option>
+                <option value="Nasi Goreng Kampung" data-harga="18000">
+                    Nasi Goreng Kampung - Rp18.000
+                </option>
+                <option value="Nasi Ayam Goreng" data-harga="25000">
+                    Nasi Ayam Goreng - Rp25.000
+                </option>
+                <option value="Soto Ayam" data-harga="20000">
+                    Soto Ayam - Rp20.000
+                </option>
+                <option value="Nasi Pecel" data-harga="17000">
+                    Nasi Pecel - Rp17.000
+                </option>
+                <option value="Tahu dan Tempe Goreng" data-harga="8000">
+                    Tahu dan Tempe Goreng - Rp8.000
+                </option>
+                <option value="Pisang Goreng" data-harga="10000">
+                    Pisang Goreng - Rp10.000
+                </option>
+                <option value="Beras Kencur" data-harga="8000">
+                    Beras Kencur - Rp8.000
+                </option>
+                <option value="Kunyit Asam" data-harga="8000">
+                    Kunyit Asam - Rp8.000
+                </option>
+                <option value="Jahe Merah" data-harga="7000">
+                    Jahe Merah - Rp7.000
+                </option>
+                <option value="Wedang Secang" data-harga="7000">
+                    Wedang Secang - Rp7.000
+                </option>
+            </select>
+        </div>
 
-        <h3>Hubungi Kami</h3>
+        <div class="form-group">
+            <label for="jumlah">Jumlah pesanan</label>
+            <input type="number" id="jumlah" name="jumlah"
+                   min="1" max="100" value="1" required>
+        </div>
 
-        <form>
-            <label>Fitra</label>
-            <input type="text" placeholder="Masukkan nama">
+        <div class="form-group">
+            <label for="catatan">Catatan tambahan</label>
+            <textarea id="catatan" name="catatan"
+                      placeholder="Contoh: tidak pakai sambal (opsional)"></textarea>
+        </div>
 
-            <label>Email</label>
-            <input type="email" placeholder="Masukkan email">
+        <button type="submit" class="btn">Buat Ringkasan Pesanan</button>
 
-            <label>Pesan</label>
-            <textarea rows="5"
-                placeholder="Tulis pesan"></textarea>
+        <p class="form-note">
+            Ini merupakan simulasi formulir untuk proyek website.
+            Pesanan belum dikirim ke restoran.
+        </p>
 
-            <button type="submit">Kirim</button>
-        </form>
+        <div id="hasilPesanan" class="order-result" hidden
+             aria-live="polite"></div>
+    </form>
 
+    <div class="info-panel">
+        <h2>Informasi Restoran</h2>
+        <p>
+            Nama: Rumah Makan Nusantara
+        </p>
+        <p>
+            Alamat: isi dengan alamat restoran jika sudah ditentukan.
+        </p>
+        <p>
+            Jam operasional: isi sesuai jam operasional sebenarnya.
+        </p>
     </div>
-
-</div>
+</main>
 
 <footer>
-    © 2026 Jamu Sehat
+    <p>&copy; 2026 Rumah Makan Nusantara</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
