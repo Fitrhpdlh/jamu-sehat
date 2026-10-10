@@ -1,214 +1,366 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5e6c8;
-    margin: 0;
-    padding: 0;
+
+/* ==================================
+   RUMAH MAKAN NUSANTARA
+   ================================== */
+
+* {
+    box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3d2b1f;
+    background: #f7efe2;
+    line-height: 1.6;
+}
+
+/* NAVIGASI */
+
 nav {
-    background-color: #8b4513;
-    padding: 15px;
+    background: #57351f;
+    padding: 16px 10px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    display: inline-block;
+    color: #fffaf0;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 5px 12px;
+    font-weight: bold;
 }
+
+nav a:hover,
+nav a:focus {
+    color: #f2c879;
+    text-decoration: underline;
+}
+
+/* TATA LETAK UTAMA MENGGUNAKAN TABEL */
+
+.layout-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.layout-table td {
+    vertical-align: top;
+}
+
+/* HERO / BERANDA */
+
+.hero {
+    padding: 55px 7%;
+    background:
+        linear-gradient(120deg, #57351f, #93623c);
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    font-size: 17px;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 4px solid rgba(255,255,255,0.4);
+}
+
+.hero-text {
+    padding: 15px 25px 15px 0;
+}
+
+.hero-image-cell {
+    width: 43%;
+    padding: 15px;
+}
+
+/* TOMBOL */
+
+.btn {
+    display: inline-block;
+    background: #d69a45;
+    color: #2f2015;
+    text-decoration: none;
+    border: none;
+    padding: 11px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #efbd6d;
+}
+
+.btn:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #9a5b25;
+    outline-offset: 2px;
+}
+
+/* CONTAINER DAN JUDUL */
 
 .container {
-    width: 80%;
-    margin: 30px auto;
+    width: 86%;
+    max-width: 1150px;
+    margin: 35px auto;
 }
 
-/* Jarak antar card */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Tampilan card */
-.card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    border: 2px solid #8b4513;
-    box-sizing: border-box;
-}
-
-/* Judul di tengah */
-.hero {
+.section-title {
+    color: #704324;
     text-align: center;
+    margin: 0 0 10px;
 }
 
-h2 {
+.section-intro {
     text-align: center;
-}
-
-h1 {
-    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 25px;
 }
 
 p {
     text-align: justify;
-    line-height: 1.6;
 }
-.welcome {
+
+.center {
     text-align: center;
 }
 
-.menu-jamu {
-    width: 100%;
-    border-collapse: collapse;
+/* KARTU MENU DAN GALERI */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
     margin: 25px 0;
 }
 
-.menu-jamu th,
-.menu-jamu td {
-    border: 1px solid #8b4513;
-    padding: 12px;
-}
-
-.menu-jamu th {
-    background-color: #8b4513;
-    color: white;
-    text-align: center;
-}
-
-.menu-jamu td {
-    text-align: left;
-}
-
-.menu-jamu tr:nth-child(even) {
-    background-color: #f8f1e4;
-}
-.galery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.galery-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.galery-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.galery-card h3 {
-    margin-top: 12px;
-}
-/* ============================= */
-/* GALERY JAMU SEHAT */
-/* ============================= */
-
-.gallery-container {
-    width: 80%;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #fffaf0;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-container h1 {
-    text-align: center;
-    color: #5c2f0d;
-    margin-bottom: 10px;
-}
-
-.gallery-intro {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-/* Tata letak foto */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-/* Kartu setiap foto */
-.gallery-card {
-    background-color: white;
+.card {
+    background: #fffdf8;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
+    box-shadow: 0 3px 12px rgba(60, 36, 19, 0.13);
 }
 
-/* Efek ketika mouse diarahkan ke foto */
-.gallery-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Foto */
-.gallery-card img {
+.card img {
     width: 100%;
-    height: 220px;
+    height: 210px;
     object-fit: cover;
     display: block;
 }
 
-/* Bagian teks di bawah foto */
-.gallery-info {
-    padding: 15px;
-    text-align: center;
+.card-content {
+    padding: 16px;
 }
 
-.gallery-info h2 {
-    margin: 5px 0 10px;
-    color: #8b4513;
-    font-size: 21px;
+.card h3 {
+    color: #704324;
+    margin: 0 0 8px;
 }
 
-.gallery-info p {
-    margin: 0;
-    color: #555;
-    line-height: 1.5;
+.card p {
+    margin: 7px 0;
 }
 
+.price {
+    color: #8a4c1e;
+    font-weight: bold;
+}
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+/* TABEL MENU */
 
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    background-color: #8b4513;
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #fffdf8;
+}
+
+.menu-table th,
+.menu-table td {
+    border: 1px solid #c8ad91;
+    padding: 13px;
+    text-align: left;
+}
+
+.menu-table th {
+    background: #704324;
     color: white;
 }
 
+.menu-table tr:nth-child(even) {
+    background: #f3e5d2;
+}
 
-/* ============================= */
-/* TAMPILAN HP */
-/* ============================= */
+.menu-table tr:hover {
+    background: #f8dfb8;
+}
 
-@media (max-width: 768px) {
+/* PANEL INFORMASI */
 
-    .gallery-container {
-        width: 90%;
-        padding: 20px;
+.info-panel {
+    background: #fffaf0;
+    padding: 22px;
+    border-left: 5px solid #b77935;
+    border-radius: 6px;
+    margin: 25px 0;
+}
+
+/* FORMULIR */
+
+.order-form {
+    background: #fffdf8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(60, 36, 19, 0.12);
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #bda58d;
+    border-radius: 6px;
+    background: white;
+    color: #3d2b1f;
+    font: inherit;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-note {
+    font-size: 14px;
+    color: #65564a;
+}
+
+/* HASIL SIMULASI PESANAN */
+
+.order-result {
+    background: #edf5e9;
+    border: 1px solid #a6c59a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 22px;
+    overflow-wrap: anywhere;
+}
+
+.order-result h3 {
+    margin-top: 0;
+    color: #315c2b;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+    padding: 22px 12px;
+    text-align: center;
+    background: #57351f;
+    color: #fffaf0;
+}
+
+footer p {
+    text-align: center;
+    margin: 4px 0;
+}
+
+/* RESPONSIF UNTUK TABLET DAN HP */
+
+@media (max-width: 800px) {
+    .container {
+        width: 92%;
     }
 
-    .gallery-grid {
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        padding: 35px 5%;
+    }
+
+    .hero-image-cell {
+        width: 40%;
+    }
+
+    .hero-photo {
+        height: 240px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav a {
+        margin: 5px 7px;
+        font-size: 14px;
+    }
+
+    .layout-table,
+    .layout-table tbody,
+    .layout-table tr,
+    .layout-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .hero-text {
+        padding: 0;
+    }
+
+    .hero-image-cell {
+        padding: 15px 0 0;
+    }
+
+    .hero-photo {
+        height: 220px;
+    }
+
+    .card-grid {
         grid-template-columns: 1fr;
     }
 
+    .menu-table th,
+    .menu-table td {
+        padding: 8px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    .order-form {
+        padding: 17px;
+    }
 }
